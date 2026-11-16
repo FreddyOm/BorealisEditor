@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Borealis.SplashScreen.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="250"
+        x:Class="Borealis.SplashScreen.Views.MainWindow"
+        x:DataType="vm:SplashScreenViewModel"
+        PointerPressed="Window_MouseLeftButtonDown"
+        Icon="/Assets/AppIcon/borealis_icon_256.png"
+        WindowStartupLocation="CenterScreen"
+        WindowDecorations="None"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent"
+        Title="Borealis.SplashScreen">
+
+    <Design.DataContext><vm:SplashScreenViewModel /></Design.DataContext>
+
+    <Border CornerRadius="12"
+            ClipToBounds="True">
+        <Border.Background>
+            <ImageBrush Source="/Assets/SplashScreen/borealis_background.png"
+                        Stretch="UniformToFill" />
+        </Border.Background>
+        
+        <Grid ColumnDefinitions="0.10*,0.80*,0.10*"
+              RowDefinitions="0.70*,0.30*">
+
+            <!--Border Grid.Row="0" Grid.Column="0" Background="#40FF0000" />
+            <Border Grid.Row="0" Grid.Column="1" Background="#4000FF00" />
+            <Border Grid.Row="0" Grid.Column="2" Background="#400000FF" />
+            <Border Grid.Row="1" Grid.Column="0" Background="#40FFFF00" />
+            <Border Grid.Row="1" Grid.Column="1" Background="#40FF00FF" />
+            <Border Grid.Row="1" Grid.Column="2" Background="#4000FFFF" /-->
+            
+            <Grid Grid.Row="0" Grid.Column="1" 
+                  ColumnDefinitions=" 0.5*, 0.5*"
+                  RowDefinitions="0.6*, 0.4*">
+                <Image Grid.Row="0"
+                       Grid.Column="0"
+                       Source="/Assets/SplashScreen/borealis_logo_text.png"
+                       Stretch="Uniform"/>
+            </Grid>
+            <ProgressBar Grid.Row="1" Grid.Column="1" Value="{Binding LoadingProgress}" Foreground="White"></ProgressBar>
+            <Button Grid.Column="2" Grid.Row="0" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15" Click="CloseButton_Click">
+                <Button.Content>
+                    <Image Source="/Assets/SplashScreen/close.png"/>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

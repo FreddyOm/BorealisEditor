@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/GUI/">
+    <Project Path="GUI/Borealis.SplashScreen/Borealis.SplashScreen.csproj" />
+  </Folder>
+  <Folder Name="/Integration/" />
+</Solution>
